@@ -6,6 +6,22 @@ import { Typography, TextField, Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import CommentIcon from "@mui/icons-material/Comment";
+import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Checkbox from "@mui/material/Checkbox";
 export default function Dashboard() {
   const categoryData = [
     { icon: "", name: "Steel" },
@@ -46,6 +62,7 @@ export default function Dashboard() {
       status: "2% increase from last month",
     },
   ];
+
   return (
     <React.Fragment>
       <Grid container spacing={2}>
@@ -254,77 +271,396 @@ export default function Dashboard() {
                 </Card>
               );
             })}
-            <Box
-              sx={{
-                width: "450px",
-                height: "223px",
-                flexShrink: 0,
-                borderRadius: "14px",
-                background: "#84969F",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-                marginTop: "1rem",
-                paddingLeft: "10rem",
-              }}
-            >
-              <Box ml={12}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M24 3.22001L42 13.6123V26H38V18.0002L26 24.9283V43.6345L24 44.7892L6 34.3969V13.6123L24 3.22001ZM38 28L38 34H44V38L38 38L38 44H34L33.9999 38L28 38V34H33.9999L34 28H38ZM9.99994 18.0001L10 32.0875L21.9999 39.0156V24.9283L9.99994 18.0001ZM24 7.83882L12.2 14.6515L24 21.4643L35.8 14.6515L24 7.83882Z"
-                    fill="white"
-                  />
-                </svg>
-              </Box>
-              <Typography
+            <Grid spacing={2} container xs={12}>
+              <Grid
+                xs={6}
+                m={5}
                 sx={{
-                  color: " #FFF",
-                  // font-family: Poppins;
-                  fontSize: "20px",
-                  fontStyle: "normal",
-                  fontWeight: 400,
-                  lineHeight: "normal",
-                  letterSpacing: "0.2px",
+                  display: " flex",
+
+                  padding: "18px 18px 10px 18px",
+                  flexDirection: "column",
+                  alignItems: "flex-start",
+                  gap: "10px",
+                  flexShrink: 0,
+                  borderRadius: "14px",
+                  background: "#FFF",
                 }}
               >
-                Start adding your projects
-              </Typography>
-              <Button
+                <TableContainer>
+                  <Table sx={{ minWidth: 700 }} p={5} aria-label="simple table">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell sx={{ fontWeight: "Bold" }}>
+                          Project Summary
+                        </TableCell>
+                        <TableCell></TableCell>
+                        <TableCell>Project </TableCell>
+                        <TableCell>Project Manager </TableCell>
+                        <TableCell>Status</TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableHead>
+                      <TableRow>
+                        <TableCell sx={{ FontWeight: "bold" }}>Name</TableCell>
+                        <TableCell sx={{ FontWeight: "bold" }}>
+                          Project Manager
+                        </TableCell>
+                        <TableCell sx={{ FontWeight: "bold" }}>
+                          Due Date
+                        </TableCell>
+                        <TableCell sx={{ FontWeight: "bold" }}>
+                          Status
+                        </TableCell>
+                        <TableCell sx={{ FontWeight: "bold" }}>
+                          Progress
+                        </TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      <TableRow
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row">
+                          Nelsa web developement
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          Om prakash sao
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          May 25, 2023
+                        </TableCell>
+                        <TableCell
+                          sx={{
+                            borderRadius: "20px",
+                            background: " rgba(26, 147, 46, 0.18)",
+                          }}
+                          component="th"
+                          scope="row"
+                        >
+                          Complete
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                          >
+                            <path
+                              d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM3.2 16C3.2 23.0692 8.93075 28.8 16 28.8C23.0692 28.8 28.8 23.0692 28.8 16C28.8 8.93075 23.0692 3.2 16 3.2C8.93075 3.2 3.2 8.93075 3.2 16Z"
+                              fill="black"
+                              fill-opacity="0.08"
+                            />
+                            <g filter="url(#filter0_i_259_2181)">
+                              <path
+                                d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM4.16 16C4.16 22.5391 9.46095 27.84 16 27.84C22.5391 27.84 27.84 22.5391 27.84 16C27.84 9.46095 22.5391 4.16 16 4.16C9.46095 4.16 4.16 9.46095 4.16 16Z"
+                                fill="#1A932E"
+                              />
+                            </g>
+                            <defs>
+                              <filter
+                                id="filter0_i_259_2181"
+                                x="0"
+                                y="0"
+                                width="32"
+                                height="33"
+                                filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB"
+                              >
+                                <feFlood
+                                  flood-opacity="0"
+                                  result="BackgroundImageFix"
+                                />
+                                <feBlend
+                                  mode="normal"
+                                  in="SourceGraphic"
+                                  in2="BackgroundImageFix"
+                                  result="shape"
+                                />
+                                <feColorMatrix
+                                  in="SourceAlpha"
+                                  type="matrix"
+                                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                  result="hardAlpha"
+                                />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="0.5" />
+                                <feComposite
+                                  in2="hardAlpha"
+                                  operator="arithmetic"
+                                  k2="-1"
+                                  k3="1"
+                                />
+                                <feColorMatrix
+                                  type="matrix"
+                                  values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+                                />
+                                <feBlend
+                                  mode="normal"
+                                  in2="shape"
+                                  result="effect1_innerShadow_259_2181"
+                                />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row">
+                          Nelsa web developement
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          Om prakash sao
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          May 25, 2023
+                        </TableCell>
+                        <TableCell
+                          sx={{
+                            borderRadius: "20px",
+                            background: " rgba(26, 147, 46, 0.18)",
+                          }}
+                          component="th"
+                          scope="row"
+                        >
+                          Complete
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                          >
+                            <path
+                              d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM3.2 16C3.2 23.0692 8.93075 28.8 16 28.8C23.0692 28.8 28.8 23.0692 28.8 16C28.8 8.93075 23.0692 3.2 16 3.2C8.93075 3.2 3.2 8.93075 3.2 16Z"
+                              fill="black"
+                              fill-opacity="0.08"
+                            />
+                            <g filter="url(#filter0_i_259_2181)">
+                              <path
+                                d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM4.16 16C4.16 22.5391 9.46095 27.84 16 27.84C22.5391 27.84 27.84 22.5391 27.84 16C27.84 9.46095 22.5391 4.16 16 4.16C9.46095 4.16 4.16 9.46095 4.16 16Z"
+                                fill="#1A932E"
+                              />
+                            </g>
+                            <defs>
+                              <filter
+                                id="filter0_i_259_2181"
+                                x="0"
+                                y="0"
+                                width="32"
+                                height="33"
+                                filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB"
+                              >
+                                <feFlood
+                                  flood-opacity="0"
+                                  result="BackgroundImageFix"
+                                />
+                                <feBlend
+                                  mode="normal"
+                                  in="SourceGraphic"
+                                  in2="BackgroundImageFix"
+                                  result="shape"
+                                />
+                                <feColorMatrix
+                                  in="SourceAlpha"
+                                  type="matrix"
+                                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                  result="hardAlpha"
+                                />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="0.5" />
+                                <feComposite
+                                  in2="hardAlpha"
+                                  operator="arithmetic"
+                                  k2="-1"
+                                  k3="1"
+                                />
+                                <feColorMatrix
+                                  type="matrix"
+                                  values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+                                />
+                                <feBlend
+                                  mode="normal"
+                                  in2="shape"
+                                  result="effect1_innerShadow_259_2181"
+                                />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </TableCell>
+                      </TableRow>
+                      <TableRow
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row">
+                          Nelsa web developement
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          Om prakash sao
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          May 25, 2023
+                        </TableCell>
+                        <TableCell
+                          sx={{
+                            borderRadius: "20px",
+                            background: " rgba(26, 147, 46, 0.18)",
+                          }}
+                          component="th"
+                          scope="row"
+                        >
+                          Complete
+                        </TableCell>
+                        <TableCell component="th" scope="row">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 32 32"
+                            fill="none"
+                          >
+                            <path
+                              d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM3.2 16C3.2 23.0692 8.93075 28.8 16 28.8C23.0692 28.8 28.8 23.0692 28.8 16C28.8 8.93075 23.0692 3.2 16 3.2C8.93075 3.2 3.2 8.93075 3.2 16Z"
+                              fill="black"
+                              fill-opacity="0.08"
+                            />
+                            <g filter="url(#filter0_i_259_2181)">
+                              <path
+                                d="M32 16C32 24.8366 24.8366 32 16 32C7.16344 32 0 24.8366 0 16C0 7.16344 7.16344 0 16 0C24.8366 0 32 7.16344 32 16ZM4.16 16C4.16 22.5391 9.46095 27.84 16 27.84C22.5391 27.84 27.84 22.5391 27.84 16C27.84 9.46095 22.5391 4.16 16 4.16C9.46095 4.16 4.16 9.46095 4.16 16Z"
+                                fill="#1A932E"
+                              />
+                            </g>
+                            <defs>
+                              <filter
+                                id="filter0_i_259_2181"
+                                x="0"
+                                y="0"
+                                width="32"
+                                height="33"
+                                filterUnits="userSpaceOnUse"
+                                color-interpolation-filters="sRGB"
+                              >
+                                <feFlood
+                                  flood-opacity="0"
+                                  result="BackgroundImageFix"
+                                />
+                                <feBlend
+                                  mode="normal"
+                                  in="SourceGraphic"
+                                  in2="BackgroundImageFix"
+                                  result="shape"
+                                />
+                                <feColorMatrix
+                                  in="SourceAlpha"
+                                  type="matrix"
+                                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                  result="hardAlpha"
+                                />
+                                <feOffset dy="3" />
+                                <feGaussianBlur stdDeviation="0.5" />
+                                <feComposite
+                                  in2="hardAlpha"
+                                  operator="arithmetic"
+                                  k2="-1"
+                                  k3="1"
+                                />
+                                <feColorMatrix
+                                  type="matrix"
+                                  values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0"
+                                />
+                                <feBlend
+                                  mode="normal"
+                                  in2="shape"
+                                  result="effect1_innerShadow_259_2181"
+                                />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              </Grid>
+              <Grid
+                m={5}
+                p={5}
                 sx={{
-                  width: " 243px",
-                  height: "50px",
-                  borderRadius: "30px",
-                  marginLeft: "1rem",
-                  background: "#fff",
-                  marginTop: "1rem",
+                  flexShrink: 0,
+                  borderRadius: "14px",
+                  background: " #FFF",
                 }}
               >
                 <Typography
                   sx={{
-                    flexShrink: 0,
-                    textAlign: "center",
-                    color: "#84969F",
-                    // font-family: Poppins
-                    fontSize: "15px",
+                    color: " #060606",
+                    // font-family: Poppins;
+                    fontSize: "16px",
                     fontStyle: "normal",
-                    fontWeight: 600,
+                    fontWeight: 400,
                     lineHeight: "normal",
-                    letterSpacing: "-0.4px",
+                    letterSpacing: "0.16px",
                   }}
                 >
-                  {" "}
-                  Request for Quote
+                  Today task
                 </Typography>
-              </Button>
-            </Box>
+
+                <Tabs
+                  //   value={value}
+                  //   onChange={handleChange}
+                  aria-label="basic tabs example"
+                >
+                  <Tab label="All" />
+                  <Tab label="Important" />
+                  <Tab label="Notes" />
+                  <Tab label="Links" />
+                </Tabs>
+                <List
+                  sx={{
+                    width: "100%",
+                    maxWidth: 360,
+                    bgcolor: "background.paper",
+                  }}
+                >
+                  {[1, 2, 3].map((value) => (
+                    <ListItem
+                      key={value}
+                      disableGutters
+                      secondaryAction={
+                        <IconButton aria-label="comment">
+                          <CommentIcon />
+                        </IconButton>
+                      }
+                    >
+                      <ListItemIcon>
+                        <Checkbox
+                          edge="start"
+                          //   checked={checked.indexOf(value) !== -1}
+                          tabIndex={-1}
+                          disableRipple
+                          //   inputProps={{ "aria-labelledby": labelId }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText primary={`Line item ${value}`} />
+                    </ListItem>
+                  ))}
+                </List>
+              </Grid>
+            </Grid>
+
             <Grid
               container
               spacing={2}

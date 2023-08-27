@@ -9,10 +9,10 @@ export default function App() {
   return (
     <div className="App">
       {/* <GetStarted /> */}
-      {/* <Dashboard /> */}
+      <Dashboard />
       {/* <Vendor /> */}
       {/* <Buyer /> */}
-      <ProjectDetails />
+      {/* <ProjectDetails /> */}
 
       {/* <Routes> <BrowserRouter> 
         <Route path="/" component={<GetStarted />} />
