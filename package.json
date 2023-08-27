@@ -5,6 +5,7 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@csstools/normalize.css": "^12.0.0",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@mui/icons-material": "5.14.6",
@@ -13,9 +14,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-router-dom": "6.10.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "sanitize.css": "^13.0.0"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/runtime": "7.13.8",
     "typescript": "4.1.3"
   },
