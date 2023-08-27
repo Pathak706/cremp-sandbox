@@ -1,0 +1,159 @@
+body {
+  --gs-bgColor: #f4f7fe;
+  --white: #ffffff;
+  --black: #000000;
+  --grey: #84969f;
+}
+#file-upload-button {
+  background-color: white;
+  border: none;
+}
+.w50 {
+  width: 50%;
+}
+.w100 {
+  width: 100%;
+}
+.bgGrey {
+  background-color: var(--grey) !important;
+}
+.black {
+  color: var(--black) !important;
+}
+.white {
+  color: var(--white) !important;
+}
+.camelCase {
+  text-transform: capitalize !important;
+}
+.alignStart {
+  text-align: start;
+}
+.alignCenter {
+  text-align: center;
+}
+.justifyCenter {
+  justify-content: center;
+}
+.underLine {
+  text-decoration: underline;
+}
+/* Add your other styles here */
+
+/* Hide the default file input button */
+.file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+/* custom Upload File button */
+.file-input::before {
+  content: "Upload";
+  display: inline-block;
+  background: var(--white);
+  color: var(--black);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* GetStarted.css */
+.gs-container {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  min-height: 100vh; /* Ensure at least full viewport height */
+  background-color: var(--gs-bgColor);
+}
+
+.gs-content {
+  flex: 1;
+  padding: 20px;
+  align-self: baseline;
+}
+.gs-content-center {
+  text-align: center;
+  margin: 10% 0px;
+}
+
+.gs-content-center > * {
+  padding: 1% 0;
+}
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start; /* Align the image at the top */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.fullscreen-image {
+  width: auto;
+  height: 100%;
+  max-width: 80%; /* Adjust the image width */
+  object-fit: cover;
+}
+
+.gs-cards-container {
+  margin-top: 5%;
+}
+.gs-cards-container > * {
+  margin: 1%;
+  cursor: pointer;
+}
+/* GetStarted.css */
+
+/*Input.css*/
+.bv-input {
+  color: var(--black);
+  margin: 1.5% 0 !important;
+  width: 100%;
+}
+.bv-input input {
+  background-color: var(--white);
+  height: 0.7em;
+}
+.bv-input button {
+  min-width: fit-content;
+}
+.bv-input button svg {
+  color: var(--grey);
+}
+.bv-input button span {
+  color: var(--black);
+}
+.bv-input div {
+  padding: 0;
+  background-color: var(--white);
+}
+.bv-input-container {
+  display: flex;
+  flex-direction: column !important;
+  align-items: center;
+}
+/*Input.css*/
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content,
+  .image-container {
+    flex: unset;
+    width: 100%;
+    position: static;
+    height: auto;
+    overflow: visible;
+    z-index: initial;
+  }
+  .fullscreen-image {
+    max-width: 100%;
+  }
+  .bv-input {
+    width: 100%;
+  }
+}

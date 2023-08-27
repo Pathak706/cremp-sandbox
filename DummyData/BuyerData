@@ -1,0 +1,54 @@
+  const inputFields = [
+    {
+      title: "Name of the User",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "John Doe",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true
+    },
+    {
+      title: "Registered Trade Name",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "Doe Industries",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true
+    },
+    {
+      title: "Registered Office Address",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "Koregaon Park,Pune",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true
+    },
+    {
+      title: "Contact Number",
+      helperText: "Verify via OTP",
+      type: "number",
+      value: "8919999999",
+      required: true,
+      error: false,
+      otp: true,
+      clearField: false
+    },
+    {
+      title: "Email Id",
+      helperText: "Verify via OTP",
+      type: "email",
+      value: "abc@gmail.com",
+      required: true,
+      error: false,
+      otp: true,
+      clearField: false
+    }
+  ];
+
+  export default {inputFields};
