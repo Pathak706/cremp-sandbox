@@ -6,7 +6,8 @@ import { Typography, TextField, Button } from "@mui/material";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-export default function Dashboard() {
+import InputField from "../components/Input";
+export default function ProjectDetails() {
   const categoryData = [
     { icon: "", name: "Steel" },
     { icon: "", name: "Cement" },
@@ -20,30 +21,94 @@ export default function Dashboard() {
     { icon: "", name: "RMC" },
   ];
 
-  const overviewData = [
+  const formInput = [
     {
-      icon: "",
-      title: "Total revenue",
-      value: "$53,00989",
-      status: "12% increase from last month",
+      title: "Project Name",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "John Doe",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
     },
     {
-      icon: "",
-      title: "Projects",
-      value: "95 /100",
-      status: "10% decrease from last month",
+      title: "Project Address",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "Doe industries",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
     },
     {
-      icon: "",
-      title: "Time spent",
-      value: "1022 /1300 Hrs",
-      status: "8% increase from last month",
+      title: "GST No",
+      helperText: "Please upload your GST number",
+      type: "file",
+      value: "",
     },
     {
-      icon: "",
-      title: "Resources",
-      value: "101 /120",
-      status: "2% increase from last month",
+      title: "Pan No",
+      helperText: "Please upload your PAN number",
+      type: "file",
+      value: "",
+    },
+    {
+      title: "Total Construction Area",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "123445",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
+    },
+    {
+      title: "Commensment Certificate",
+      helperText: "Please upload your Commencement Certificate (If applicable)",
+      type: "file",
+      value: "",
+    },
+    {
+      title: "Project Status",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
+    },
+    {
+      title: "Delivery Date",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "25 July 2024",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
+    },
+    {
+      title: "Rera Number",
+      helperText: "Supporting Text",
+      type: "text",
+      value: "123445",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
+    },
+    {
+      title: "Construction Finance",
+      helperText: "Please select",
+      type: "text",
+      value: "123445",
+      required: true,
+      error: false,
+      otp: false,
+      clearField: true,
     },
   ];
   return (
@@ -125,218 +190,151 @@ export default function Dashboard() {
               );
             })}
           </Grid>
-          <Box m={5}>
-            <Typography
-              mt={3}
-              component="div"
-              sx={{
-                color: "#84969F",
-                // fontFamily: Poppins;
-                fontSize: "22px",
-                fontStyle: "normal",
-                fontWeight: 600,
-                lineHeight: "normal" /* 150% */,
-                letterSpacing: ".22px",
-              }}
-            >
-              Overview
-            </Typography>
-          </Box>
-          <Grid container spacing={2} ml={5}>
-            {overviewData.map((item, idnex) => {
-              return (
-                <Card
+          <Grid container spacing={5}>
+            <Grid xs={8}>
+              <Box m={5} ml={10}>
+                <Typography
+                  mt={10}
+                  component="div"
                   sx={{
-                    width: "250px",
-                    height: "196px",
-                    padding: "18px 43px 24px 18px",
-                    marginRight: "10px",
-                    borderRadius: "20px",
+                    // color: "#84969F",
+                    // fontFamily: Poppins;
+                    fontSize: "18px",
+                    fontStyle: "normal",
+                    // fontWeight: 600,
+                    lineHeight: "116%" /* 150% */,
+                    letterSpacing: ".22px",
                   }}
                 >
-                  <CardContent
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      justifyContent: "space-between",
-                      gap: "20px",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        color: "#797979",
-                        // font-family: Poppins;
-                        fontSize: "14px",
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        lineHeight: "normal",
-                      }}
-                      gutterBottom
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="22"
-                        viewBox="0 0 20 22"
-                        fill="none"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M0 20.75C0 20.3358 0.335786 20 0.75 20H18.75C19.1642 20 19.5 20.3358 19.5 20.75C19.5 21.1642 19.1642 21.5 18.75 21.5H0.75C0.335786 21.5 0 21.1642 0 20.75Z"
-                          fill="#84969F"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M0 8.13086C0 7.16665 0.785786 6.38086 1.75 6.38086H3.34998C4.31419 6.38086 5.09998 7.16665 5.09998 8.13086V16.7509C5.09998 17.7151 4.31419 18.5009 3.34998 18.5009H1.75C0.785786 18.5009 0 17.7151 0 16.7509V8.13086ZM1.75 7.88086C1.61421 7.88086 1.5 7.99507 1.5 8.13086V16.7509C1.5 16.8866 1.61421 17.0009 1.75 17.0009H3.34998C3.48576 17.0009 3.59998 16.8866 3.59998 16.7509V8.13086C3.59998 7.99507 3.48576 7.88086 3.34998 7.88086H1.75Z"
-                          fill="#84969F"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M7.19922 4.93945C7.19922 3.97524 7.98501 3.18945 8.94922 3.18945H10.5492C11.5134 3.18945 12.2992 3.97524 12.2992 4.93945V16.7495C12.2992 17.7137 11.5134 18.4995 10.5492 18.4995H8.94922C7.98501 18.4995 7.19922 17.7137 7.19922 16.7495V4.93945ZM8.94922 4.68945C8.81343 4.68945 8.69922 4.80367 8.69922 4.93945V16.7495C8.69922 16.8852 8.81343 16.9995 8.94922 16.9995H10.5492C10.685 16.9995 10.7992 16.8852 10.7992 16.7495V4.93945C10.7992 4.80367 10.685 4.68945 10.5492 4.68945H8.94922Z"
-                          fill="#84969F"
-                        />
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M14.3984 1.75C14.3984 0.785786 15.1842 0 16.1484 0H17.7484C18.7126 0 19.4984 0.785786 19.4984 1.75V16.75C19.4984 17.7142 18.7126 18.5 17.7484 18.5H16.1484C15.1842 18.5 14.3984 17.7142 14.3984 16.75V1.75ZM16.1484 1.5C16.0127 1.5 15.8984 1.61421 15.8984 1.75V16.75C15.8984 16.8858 16.0127 17 16.1484 17H17.7484C17.8842 17 17.9984 16.8858 17.9984 16.75V1.75C17.9984 1.61421 17.8842 1.5 17.7484 1.5H16.1484Z"
-                          fill="#84969F"
-                        />
-                      </svg>
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: "#797979",
-                        // font-family: Poppins;
-                        fontSize: "14px",
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        lineHeight: "normal",
-                      }}
-                      gutterBottom
-                    >
-                      {item.title}
-                    </Typography>
-                    <Typography variant="h5" component="div"></Typography>
-                    <Typography
-                      sx={{
-                        color: "#060606",
-                        // font-family: Poppins;
-                        fontSize: "28px",
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        lineHeight: "normal",
-                        letterSpacing: "0.28px",
-                      }}
-                      color="text.secondary"
-                    >
-                      {item.value}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        color: "#060606",
-                        // font-family: Poppins;
-                        fontSize: "10px",
-                        fontStyle: "normal",
-                        fontWeight: 400,
-                        lineHeight: "12px" /* 120% */,
-                        letterSpacing: "0.2px",
-                      }}
-                      variant="body2"
-                    >
-                      {item.status}
-                    </Typography>
-                  </CardContent>
-                  <CardActions></CardActions>
-                </Card>
-              );
-            })}
-            <Box
-              sx={{
-                width: "450px",
-                height: "223px",
-                flexShrink: 0,
-                borderRadius: "14px",
-                background: "#84969F",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-                marginTop: "1rem",
-                paddingLeft: "10rem",
-              }}
-            >
-              <Box ml={12}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M24 3.22001L42 13.6123V26H38V18.0002L26 24.9283V43.6345L24 44.7892L6 34.3969V13.6123L24 3.22001ZM38 28L38 34H44V38L38 38L38 44H34L33.9999 38L28 38V34H33.9999L34 28H38ZM9.99994 18.0001L10 32.0875L21.9999 39.0156V24.9283L9.99994 18.0001ZM24 7.83882L12.2 14.6515L24 21.4643L35.8 14.6515L24 7.83882Z"
-                    fill="white"
-                  />
-                </svg>
+                  To add project, kindly fill in the below form
+                </Typography>
               </Box>
-              <Typography
+              <Grid columnSpacing={2} ml={10} xs={12} container>
+                {formInput.map((input, index) => {
+                  return (
+                    <Grid xs={4} mr={2}>
+                      <InputField {...input} />
+                    </Grid>
+                  );
+                })}
+                <Grid xs={4} mr={2}>
+                  <Button
+                    sx={{
+                      borderRadius: "30.8px",
+                      border: "1px solid #84969F",
+                      color: "#84969F",
+                    }}
+                    className="grey camelCase w100"
+                  >
+                    Save
+                  </Button>
+                </Grid>
+                <Grid xs={4} mr={2}>
+                  <Button
+                    sx={{ borderRadius: "30.8px", border: "1px solid #84969F" }}
+                    className="white camelCase bgGrey w100"
+                  >
+                    Continue
+                  </Button>
+                </Grid>
+              </Grid>
+              <Box
+                ml={10}
                 sx={{
-                  color: " #FFF",
-                  // font-family: Poppins;
-                  fontSize: "20px",
-                  fontStyle: "normal",
-                  fontWeight: 400,
-                  lineHeight: "normal",
-                  letterSpacing: "0.2px",
-                }}
-              >
-                Start adding your projects
-              </Typography>
-              <Button
-                sx={{
-                  width: " 243px",
-                  height: "50px",
-                  borderRadius: "30px",
-                  marginLeft: "1rem",
-                  background: "#fff",
+                  width: "450px",
+                  height: "223px",
+                  flexShrink: 0,
+                  borderRadius: "14px",
+                  background: "#84969F",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
                   marginTop: "1rem",
+
+                  paddingLeft: "10rem",
                 }}
               >
+                <Box ml={12}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 48 48"
+                    fill="none"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M24 3.22001L42 13.6123V26H38V18.0002L26 24.9283V43.6345L24 44.7892L6 34.3969V13.6123L24 3.22001ZM38 28L38 34H44V38L38 38L38 44H34L33.9999 38L28 38V34H33.9999L34 28H38ZM9.99994 18.0001L10 32.0875L21.9999 39.0156V24.9283L9.99994 18.0001ZM24 7.83882L12.2 14.6515L24 21.4643L35.8 14.6515L24 7.83882Z"
+                      fill="white"
+                    />
+                  </svg>
+                </Box>
                 <Typography
                   sx={{
-                    flexShrink: 0,
-                    textAlign: "center",
-                    color: "#84969F",
-                    // font-family: Poppins
-                    fontSize: "15px",
+                    color: " #FFF",
+                    // font-family: Poppins;
+                    fontSize: "20px",
                     fontStyle: "normal",
-                    fontWeight: 600,
+                    fontWeight: 400,
                     lineHeight: "normal",
-                    letterSpacing: "-0.4px",
+                    letterSpacing: "0.2px",
                   }}
                 >
-                  {" "}
-                  Request for Quote
+                  You have got another project?
                 </Typography>
-              </Button>
-            </Box>
+                <Button
+                  sx={{
+                    width: " 243px",
+                    height: "50px",
+                    borderRadius: "30px",
+                    marginLeft: "1rem",
+                    background: "#fff",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      flexShrink: 0,
+                      textAlign: "center",
+                      color: "#84969F",
+                      // font-family: Poppins
+                      fontSize: "15px",
+                      fontStyle: "normal",
+                      fontWeight: 600,
+                      lineHeight: "normal",
+                      letterSpacing: "-0.4px",
+                    }}
+                  >
+                    {" "}
+                    Start Adding
+                  </Typography>
+                </Button>
+              </Box>
+            </Grid>
             <Grid
-              container
-              spacing={2}
-              m={1}
-              p={3}
+              mt={10}
+              xs={4}
               sx={{
                 display: "flex",
                 // justifyContent: "space-between",
-                background: "#FFF",
+                flexDirection: "column",
               }}
             >
-              {[1, 2, 3, 4].map((item) => {
+              <Box>
+                <Card
+                  sx={{
+                    width: "300px",
+                    height: "150px",
+                    padding: "18px 43px 24px 18px",
+                    borderRadius: "20px",
+                    marginTop: "10px",
+                    marginRight: "10px",
+                  }}
+                ></Card>
+              </Box>
+
+              {[1, 2].map((item) => {
                 return (
                   <Card
                     sx={{

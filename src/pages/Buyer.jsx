@@ -16,7 +16,7 @@ export default function Buyer() {
       required: true,
       error: false,
       otp: false,
-      clearField: true
+      clearField: true,
     },
     {
       title: "Registered Trade Name",
@@ -26,7 +26,7 @@ export default function Buyer() {
       required: true,
       error: false,
       otp: false,
-      clearField: true
+      clearField: true,
     },
     {
       title: "Registered Office Address",
@@ -36,7 +36,7 @@ export default function Buyer() {
       required: true,
       error: false,
       otp: false,
-      clearField: true
+      clearField: true,
     },
     {
       title: "Contact Number",
@@ -46,7 +46,7 @@ export default function Buyer() {
       required: true,
       error: false,
       otp: true,
-      clearField: false
+      clearField: false,
     },
     {
       title: "Email Id",
@@ -56,8 +56,8 @@ export default function Buyer() {
       required: true,
       error: false,
       otp: true,
-      clearField: false
-    }
+      clearField: false,
+    },
   ];
   return (
     <React.Fragment>
