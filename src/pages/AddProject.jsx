@@ -17,7 +17,7 @@ export default function Dashboard() {
     { icon: "", name: "Chemicals" },
     { icon: "", name: "Electrical Materials" },
     { icon: "", name: "Stones and Tiles" },
-    { icon: "", name: "RMC" }
+    { icon: "", name: "RMC" },
   ];
 
   const overviewData = [
@@ -25,26 +25,26 @@ export default function Dashboard() {
       icon: "",
       title: "Total revenue",
       value: "$53,00989",
-      status: "12% increase from last month"
+      status: "12% increase from last month",
     },
     {
       icon: "",
       title: "Projects",
       value: "95 /100",
-      status: "10% decrease from last month"
+      status: "10% decrease from last month",
     },
     {
       icon: "",
       title: "Time spent",
       value: "1022 /1300 Hrs",
-      status: "8% increase from last month"
+      status: "8% increase from last month",
     },
     {
       icon: "",
       title: "Resources",
       value: "101 /120",
-      status: "2% increase from last month"
-    }
+      status: "2% increase from last month",
+    },
   ];
   return (
     <React.Fragment>
@@ -64,7 +64,7 @@ export default function Dashboard() {
                 fontStyle: "normal",
                 fontWeight: 600,
                 lineHeight: "42px" /* 150% */,
-                letterSpacing: "-0.56px"
+                letterSpacing: "-0.56px",
               }}
             >
               Category
@@ -79,7 +79,7 @@ export default function Dashboard() {
                   mr={1}
                   sx={{
                     background: "#fff",
-                    borderRadius: "14.547px"
+                    borderRadius: "14.547px",
                   }}
                 >
                   <Box style={{ display: "flex" }}>
@@ -114,7 +114,7 @@ export default function Dashboard() {
                         fontStyle: "normal",
                         fontWeight: 600,
                         lineHeight: "23.275px" /* 160% */,
-                        letterSpacing: "-0.291px"
+                        letterSpacing: "-0.291px",
                       }}
                       component="div"
                     >
@@ -136,7 +136,7 @@ export default function Dashboard() {
                 fontStyle: "normal",
                 fontWeight: 600,
                 lineHeight: "normal" /* 150% */,
-                letterSpacing: ".22px"
+                letterSpacing: ".22px",
               }}
             >
               Overview
@@ -150,7 +150,8 @@ export default function Dashboard() {
                     width: "250px",
                     height: "196px",
                     padding: "18px 43px 24px 18px",
-                    marginRight: "10px"
+                    marginRight: "10px",
+                    borderRadius: "20px",
                   }}
                 >
                   <CardContent
@@ -159,7 +160,7 @@ export default function Dashboard() {
                       flexDirection: "column",
                       alignItems: "flex-start",
                       justifyContent: "space-between",
-                      gap: "20px"
+                      gap: "20px",
                     }}
                   >
                     <Typography
@@ -169,7 +170,7 @@ export default function Dashboard() {
                         fontSize: "14px",
                         fontStyle: "normal",
                         fontWeight: 400,
-                        lineHeight: "normal"
+                        lineHeight: "normal",
                       }}
                       gutterBottom
                     >
@@ -213,7 +214,7 @@ export default function Dashboard() {
                         fontSize: "14px",
                         fontStyle: "normal",
                         fontWeight: 400,
-                        lineHeight: "normal"
+                        lineHeight: "normal",
                       }}
                       gutterBottom
                     >
@@ -228,7 +229,7 @@ export default function Dashboard() {
                         fontStyle: "normal",
                         fontWeight: 400,
                         lineHeight: "normal",
-                        letterSpacing: "0.28px"
+                        letterSpacing: "0.28px",
                       }}
                       color="text.secondary"
                     >
@@ -242,7 +243,7 @@ export default function Dashboard() {
                         fontStyle: "normal",
                         fontWeight: 400,
                         lineHeight: "12px" /* 120% */,
-                        letterSpacing: "0.2px"
+                        letterSpacing: "0.2px",
                       }}
                       variant="body2"
                     >
@@ -255,7 +256,7 @@ export default function Dashboard() {
             })}
             <Box
               sx={{
-                width: "568px",
+                width: "450px",
                 height: "223px",
                 flexShrink: 0,
                 borderRadius: "14px",
@@ -264,23 +265,25 @@ export default function Dashboard() {
                 justifyContent: "center",
                 flexDirection: "column",
                 marginTop: "1rem",
-                paddingLeft: "5rem"
+                paddingLeft: "10rem",
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 48 48"
-                fill="none"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M24 3.22001L42 13.6123V26H38V18.0002L26 24.9283V43.6345L24 44.7892L6 34.3969V13.6123L24 3.22001ZM38 28L38 34H44V38L38 38L38 44H34L33.9999 38L28 38V34H33.9999L34 28H38ZM9.99994 18.0001L10 32.0875L21.9999 39.0156V24.9283L9.99994 18.0001ZM24 7.83882L12.2 14.6515L24 21.4643L35.8 14.6515L24 7.83882Z"
-                  fill="white"
-                />
-              </svg>
+              <Box ml={12}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 48 48"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M24 3.22001L42 13.6123V26H38V18.0002L26 24.9283V43.6345L24 44.7892L6 34.3969V13.6123L24 3.22001ZM38 28L38 34H44V38L38 38L38 44H34L33.9999 38L28 38V34H33.9999L34 28H38ZM9.99994 18.0001L10 32.0875L21.9999 39.0156V24.9283L9.99994 18.0001ZM24 7.83882L12.2 14.6515L24 21.4643L35.8 14.6515L24 7.83882Z"
+                    fill="white"
+                  />
+                </svg>
+              </Box>
               <Typography
                 sx={{
                   color: " #FFF",
@@ -289,7 +292,7 @@ export default function Dashboard() {
                   fontStyle: "normal",
                   fontWeight: 400,
                   lineHeight: "normal",
-                  letterSpacing: "0.2px"
+                  letterSpacing: "0.2px",
                 }}
               >
                 Start adding your projects
@@ -301,7 +304,7 @@ export default function Dashboard() {
                   borderRadius: "30px",
                   marginLeft: "1rem",
                   background: "#fff",
-                  marginTop: "1rem"
+                  marginTop: "1rem",
                 }}
               >
                 <Typography
@@ -314,7 +317,7 @@ export default function Dashboard() {
                     fontStyle: "normal",
                     fontWeight: 600,
                     lineHeight: "normal",
-                    letterSpacing: "-0.4px"
+                    letterSpacing: "-0.4px",
                   }}
                 >
                   {" "}
@@ -322,6 +325,59 @@ export default function Dashboard() {
                 </Typography>
               </Button>
             </Box>
+            <Grid
+              container
+              spacing={2}
+              m={1}
+              p={3}
+              sx={{
+                display: "flex",
+                // justifyContent: "space-between",
+                background: "#FFF",
+              }}
+            >
+              {[1, 2, 3, 4].map((item) => {
+                return (
+                  <Card
+                    sx={{
+                      width: "300px",
+                      height: "150px",
+                      padding: "18px 43px 24px 18px",
+                      borderRadius: "20px",
+                      marginTop: "10px",
+                      marginRight: "10px",
+                    }}
+                  >
+                    <CardContent>
+                      <Box sx={{ display: "flex" }}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 28 28"
+                          fill="none"
+                        >
+                          <path
+                            d="M22.7267 14.4083C20.895 9.64834 14.3734 9.39167 15.9484 2.47334C16.065 1.96001 15.5167 1.56334 15.0734 1.83167C10.8384 4.32834 7.79335 9.33334 10.3484 15.89C10.5584 16.4267 9.92835 16.9283 9.47335 16.5783C7.36169 14.98 7.14002 12.6817 7.32669 11.0367C7.39669 10.43 6.60335 10.1383 6.26502 10.64C5.47169 11.8533 4.66669 13.8133 4.66669 16.765C5.11002 23.2983 10.6284 25.305 12.6117 25.5617C15.4467 25.9233 18.515 25.3983 20.72 23.38C23.1467 21.1283 24.0334 17.535 22.7267 14.4083ZM11.9 20.2767C13.58 19.8683 14.4434 18.655 14.6767 17.5817C15.0617 15.9133 13.5567 14.28 14.5717 11.6433C14.9567 13.825 18.3867 15.19 18.3867 17.57C18.48 20.5217 15.2834 23.0533 11.9 20.2767Z"
+                            fill="#84969F"
+                          />
+                        </svg>
+                        <Typography>News</Typography>
+                      </Box>
+                      <Box>
+                        <Typography
+                          sx={{ width: "200px", fontSize: "10px" }}
+                          mt={1}
+                        >
+                          Indian Primary Steel Market Remains Unchanged,
+                          Secondary Sees Variations in July's Third Week
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
